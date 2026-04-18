@@ -1,6 +1,6 @@
 /*
-Name: Your Name Here
-Registration Number: Your Registration Number Here
+Name: MUGABI JOSHUA
+Registration Number: 25/U/BIE/01394/PE
 */
 
 #include <stdio.h>
@@ -93,7 +93,7 @@ int main(void) {
 
     /* COMPUTE CGPA */
 
-    overal_cgpa = (sem1gpa + sem2gpa) / 2;
+    overal_cgpa = (sem1total + sem2total) / 49.0;
 
     /* DETERMINE CLASSIFICATION */
 
