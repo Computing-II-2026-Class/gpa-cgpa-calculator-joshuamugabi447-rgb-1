@@ -33,6 +33,12 @@ int main(void) {
     for(int i = 0; i < 8; i++) {
         printf("%s: ", course[i]);
         scanf("%d", &score[i]);
+
+        /* VALIDATE IMMEDIATELY */
+        if(score[i] < 0 || score[i] > 100) {
+            printf("Invalid score entered\n");
+            return 0;
+        }
     }
 
     printf("\nENTER RESULTS FOR SEMESTER 2\n");
@@ -40,13 +46,10 @@ int main(void) {
     for(int i = 8; i < 16; i++) {
         printf("%s: ", course[i]);
         scanf("%d", &score[i]);
-    }
 
-    /* VALIDATE INPUT */
-
-    for(int i = 0; i < 16; i++) {
+        /* VALIDATE IMMEDIATELY */
         if(score[i] < 0 || score[i] > 100) {
-            printf("INVALID SCORE ENTERED\n");
+            printf("Invalid score entered\n");
             return 0;
         }
     }
@@ -78,7 +81,7 @@ int main(void) {
     /* COMPUTE SEMESTER I GPA */
 
     for(int i = 0; i < 8; i++) {
-        sem1total =sem1total +(gp[i] * cu[i]);
+        sem1total += gp[i] * cu[i];
     }
 
     sem1gpa = sem1total / 24.0;
@@ -86,7 +89,7 @@ int main(void) {
     /* COMPUTE SEMESTER II GPA */
 
     for(int i = 8; i < 16; i++) {
-        sem2total =  sem2total+(gp[i] * cu[i]);
+        sem2total += gp[i] * cu[i];
     }
 
     sem2gpa = sem2total / 25.0;
@@ -138,7 +141,8 @@ int main(void) {
 
     printf("\nSemester II GPA: %.2f\n", sem2gpa);
 
-    printf("\nSemester I GPA: %.2f\n", sem1gpa);
+
+     printf("\nSemester I GPA: %.2f\n", sem1gpa);
     printf("Semester II GPA: %.2f\n", sem2gpa);
     printf("CGPA: %.2f\n", overal_cgpa);
     printf("Classification: %s\n", classification);
